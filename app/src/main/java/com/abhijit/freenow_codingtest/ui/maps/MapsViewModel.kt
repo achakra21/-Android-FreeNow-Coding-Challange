@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.*
 class MapsViewModel @ViewModelInject constructor() : ViewModel() {
 
 
-    fun bitmapDescriptorFromVector(
+    private fun bitmapDescriptorFromVector(
         context: Context,
         @DrawableRes vectorDrawableResourceId: Int
     ): BitmapDescriptor? {
@@ -49,7 +49,7 @@ class MapsViewModel @ViewModelInject constructor() : ViewModel() {
             val location = LatLng(poi.coordinate.latitude, poi.coordinate.longitude)
             mp.position(location)
             marker = googleMap.addMarker(mp.title(poi.id.toString())
-                .icon(context.let { bitmapDescriptorFromVector(it, R.drawable.ic_car) })
+                .icon(bitmapDescriptorFromVector(context, R.drawable.ic_car))
                 .rotation(poi.heading)
             )
         }

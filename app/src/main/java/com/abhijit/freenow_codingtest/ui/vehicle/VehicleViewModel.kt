@@ -18,8 +18,8 @@ class VehicleViewModel @ViewModelInject constructor(
     private val networkHelper: NetworkHelper
 ) : ViewModel() {
 
-    val bound1 = LatLng(53.694865, 9.757589)
-    val bound2 = LatLng(53.394655, 10.099891)
+    private val bound1 = LatLng(53.694865, 9.757589)
+    private val bound2 = LatLng(53.394655, 10.099891)
     private val _vehicleInfo = MutableLiveData<Resource<VehicleData>>()
     val vehicleDetails: LiveData<Resource<VehicleData>>
         get() = _vehicleInfo

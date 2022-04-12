@@ -62,7 +62,7 @@ class VehicleFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_vehicle, container, false)
@@ -70,7 +70,7 @@ class VehicleFragment : Fragment() {
         return binding.root
     }
 
-    private fun renderList(vehicleDeatils: VehicleData) {
+    private fun renderList(vehicleDetails: VehicleData) {
 
         if (binding.list is RecyclerView) {
             with(binding.list) {
@@ -80,7 +80,7 @@ class VehicleFragment : Fragment() {
                 }
                 adapter =
                     VehicleRecyclerViewAdapter(
-                        vehicleDeatils.poiList
+                        vehicleDetails.poiList
 
 
                     )
